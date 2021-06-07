@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour{
 
     void Start()
     {
-        rb.AddForce(5000 * Time.deltaTime, 0, 0);
+        rb.AddForce(6000 * Time.deltaTime, 0, 0);
     }
 
     // Update is called once per frame
@@ -24,22 +24,22 @@ public class PlayerMovement : MonoBehaviour{
 
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            rb.AddForce(0, 0, 1 * Time.deltaTime, ForceMode.VelocityChange);
+            rb.AddForce(0, 0, 300 * Time.deltaTime);
         }
 
         else if (Input.GetKey(KeyCode.RightArrow))
         {
-            rb.AddForce(0, 0, -10 * Time.deltaTime, ForceMode.VelocityChange);
+            rb.AddForce(0, 0, -300 * Time.deltaTime);
         }
 
         else if (Input.GetKey(KeyCode.UpArrow))
         {
-            rb.AddForce(0, 10 * Time.deltaTime, 0, ForceMode.VelocityChange);
+            rb.AddForce(0, 300 * Time.deltaTime, 0);
         }
 
         else if (Input.GetKey(KeyCode.DownArrow))
         {
-            rb.AddForce(0, -10 * Time.deltaTime, 0, ForceMode.VelocityChange);
+            rb.AddForce(0, -300 * Time.deltaTime, 0);
         }
 
        
@@ -67,10 +67,7 @@ public class PlayerMovement : MonoBehaviour{
                     GetComponent<Rigidbody>().AddForce(Vector3.down / 5, ForceMode.VelocityChange);
                 }*/
 
-        if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            GetComponent<Rigidbody>().AddForce(Vector3.forward / 5, ForceMode.VelocityChange);
-        }
+    
     }
 }
     

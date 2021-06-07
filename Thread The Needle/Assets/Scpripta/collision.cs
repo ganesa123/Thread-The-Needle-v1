@@ -1,14 +1,27 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class collision : MonoBehaviour
 {
     public PlayerMovement movement;
+    public int Text = 0; 
 
-    void OnCollisionEnter()
+    void OnCollisionEnter (Collision collisionInfo)
     {
-        Debug.Log("Hey 6 Feet!!");
-        movement.enabled = false;
+
+        if (collisionInfo.collider.tag == "Obstacle")
+        {
+            movement.enabled = false;
+            Debug.Log("We hit an obstacle");
+        }
+
+        
+
     }
+    private void OnTriggerEnter3D(Collider other)
+    {
+        Debug.Log("We Hit Ivisiblock.");
+    }
+
+
+
 }
